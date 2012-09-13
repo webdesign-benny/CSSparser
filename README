@@ -1,0 +1,68 @@
+PHP css parser class
+
+I'm proud to publish my first small code repository named phpCSSparser.
+
+This class is used for:
+- If you like to create CSS files ones and deploy them in multiple projects by just adding dynamic fields to them.
+- Maybe you want to use one CSS file to handle multiple theme outputs and color schemes.
+- This way you can keep CSS files on one place without copypasting them and make them more maintenance friendly.
+- Every CSS file is cached to reduce CPU usage.
+
+File structure:
+- The files are self explanatory. So open the files to see more information or read further.
+- For the sake of simplicity I used a simple file structure.
+- Please change all directory references in the cssParser.object.php file and test files to your personal needs.
+
+index.html                             // the page that needs to be styled dynamic, see the header how to use the link tag
+cssParser.object.php                   // the file that instantiate the cssParser class and is different for every project
+classes/cssparser/cssParser.class.php  // the workhorse cssParser class, see the different config settings you can use in a config array
+css/style.css                          // a general static style sheet, no attention needed.
+css/reflection.test.css                // this is the actual css file that we are parsing and caching
+cache/css/                             // the cache folder where the output is stored. Use cmod777 on these folders.
+tests/                                 // some basic test files to use with SimpleTest.
+
+Usage:
+First take a coffee or favorite drink and:
+1) change or put your link tags in the header like this:
+   <link  rel="stylesheet" type="text/css" href="cssParser.object.php?name=textreflection&css=reflection.test.css" />
+  Where "name=" is the actual name of the link so you can use multiple css links pointed to the same object script.
+  And "css=" contains the file you want to parse. Use a the filename but don't include the system path for safety issues.
+
+2) change the paths in cssParser.object.php accordingly to your needs
+3) change the $vars array to your need accordingly your css file you want to parse
+   - the first key level of the $var array are always the names of the link tags used in your html page
+   - the second key level are the css block names that you specify in your css file (see the reflected.test.css file)
+   - the third level contains the css properties you want to change dynamic
+4) change the css files you want to use dynamic by including variables as described in the reflected.test.css file
+5) reload the your html files and have fun !!!
+
+Note: 
+- All variables, keywords and declarations are case sensitive and need to be exactly the same.
+- Always remember to erase the cache files if you make changes. And reset your browser cache to see the changes.   
+- If you're using already a css cache engine in a CMS like Typo3 for example, 
+  be sure to include the cache folder outside the scope of that system. Or use a filepath outside the CMS system.
+  I personal use a "general" folder where I store all my files that I use for multiple projects.
+  
+In next upcomming version:
+- Create your own dynamic key fields. At the moment keywords "$insert" and "$attribute" are standard.
+- Error and general logfile to inspect the result in a nutshell after parsing.
+- Compress and decrompress functions for increase load speed or readability.
+- Some extra design patterns, refactoring for loose coupling the cache method in an external facade class for example. 
+- Usage of this script true a REST webservice without to install anything. 
+  The cached css files will be stored always on your server as fallback when my server go's down for some reason.
+  Provided with a security salt key in the link tags for extra defence on cross browser attacks.
+- ...
+
+Nature of this project:
+- Cause I'm an evolving junior to senior developer new to gitHub, 
+  I would be happy to receive your comments and positive criticism.
+  Or any improvements and ideas you suggest. Or bugs you my encounter. I used the SimpleTest framework to test the code.
+- There are some basis testfiles included. But you need to download and install SimpleTest to use them.
+- For test reasons some methods and variables are still declared public where it should be better to have them private.
+  But that will change in the future and is not relevant at the moment.
+
+Credits to:
+Jay Salvat, who inspired me with his nice tutorial at
+http://net.tutsplus.com/tutorials/html-css-techniques/how-to-add-variables-to-your-css-files/
+If you examine the code you will notice that I enhanced and improved the code significant to my personal needs.
+The class is like 80% different but the main concepts for using dynamic fields and caching the css files are the same. 

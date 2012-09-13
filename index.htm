@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Demo dynamic css parsing</title>
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- Dynamic parsed CSS file with a custom made CssParser class -->
+<link  rel="stylesheet" type="text/css" href="cssParser.object.php?name=textreflection&css=reflection.test.css" /> 
+
+<!-- HTML5 fallback script for older browsers, not relevant for this demo -->
+<script src="http://www.webdesign-benny.be/projects/general/js/html5shiv/src/html5shiv.js"></script>
+</head>
+<body>
+	<div id="wrapper" class="default">
+		<div class="m_l">
+			<div class="m_r">
+				<div class="t_l">
+					<div class="t_r">
+						<div class="b_m">
+							<div class="b_l">
+								<div class="b_r">
+                                    <header>
+                                        <hgroup>
+									       <h1>Demo dynamic parsed css style</h1>
+                                           <h2 class="reflected">This text should be horizontal reflected...</h2>
+									    </hgroup>
+                                    </header>
+                                    <section id="content">
+                                        <h4>The above header is styled using a custom made CSS parser with benefits:</h4>
+                                        <ul class="featured">
+                                            <li><span>Create CSS file ones and deploy them in multiple projects by just adding dynamic fields to them.</span></li>
+                                            <li><span>Maybe you want to use one CSS file to handle multiple theme outputs and color schemes.</span></li>
+                                            <li><span>This way you can keep CSS files on one place without copypasting them and make them more maintenance friendly.</span></li>
+                                            <li><span>Every CSS file is cached to reduce CPU usage.</span></li>
+                                            <li><span>More info and download at: <a href="https://github.com/webdesign-benny/phpCSSparser">https://github.com/webdesign-benny/phpCSSparser</a></span></li>
+                                        </ul>
+                                        <br />
+                                        <h4>Next in upcomming version:</h4>
+                                        <ul class="featured">
+                                            <li><span>Create your own dynamic type fields. At the moment keywords "$insert" and "$attribute" are standard.</span></li>
+                                            <li><span>Error and general logfile to inspect the result after parsing.</span></li>
+                                            <li><span>Compress and decrompress functions.</span></li>
+                                            <li><span>Usage of this script true a REST webservice without to install anything.</span></li>
+                                        </ul>
+                                        <br />
+									</section>
+                                    <footer>
+    									<div class="services">
+    										<div class="sb_m_l">
+    											<div class="sb_m_r">
+    												<div class="sb_t_l">
+    													<div class="sb_t_r">
+    														<div class="sb_b_m">
+    															<div class="sb_b_l">
+    																<div class="sb_b_r">
+    																	<h4>Contact:</h4>
+                                                                        <ul>
+                                                                            <li>Contact me for any questions: <a href="mailto:info@webdesign-benny.be">info@webdesign-benny.be</a></li>
+                                                                            <li>GSM: +32 484 71 41 46</li>
+                                                                        </ul>
+    																</div>
+    															</div>
+    														</div>
+    													</div>
+    												</div>
+    											</div>
+    										</div>
+    									</div>
+                                    </footer>
+									<div class="clr"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
