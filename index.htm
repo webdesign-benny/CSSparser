@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <title>Demo dynamic css parsing</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="http://www.css.webdesign-benny.be/style.css" />
 
 <!-- Dynamic parsed CSS file with a custom made CssParser class -->
 <link  rel="stylesheet" type="text/css" href="cssParser.object.php?name=textreflection&css=reflection.test.css" /> 
 
-<!-- HTML5 fallback script for older browsers, not relevant for this demo -->
+<!-- HTML5 fallback script for older browsers -->
 <script src="http://www.webdesign-benny.be/projects/general/js/html5shiv/src/html5shiv.js"></script>
 </head>
 <body>
@@ -23,25 +23,27 @@
                                     <header>
                                         <hgroup>
 									       <h1>Demo dynamic parsed css style</h1>
-                                           <h2 class="reflected">This text should be horizontal reflected...</h2>
+                                           <h2 class="reflected">This text is horizontal reflected with dynamic generated CSS...</h2>
 									    </hgroup>
                                     </header>
                                     <section id="content">
                                         <h4>The above header is styled using a custom made CSS parser with benefits:</h4>
                                         <ul class="featured">
-                                            <li><span>Create CSS file ones and deploy them in multiple projects by just adding dynamic fields to them.</span></li>
+                                            <li><span>Create CSS files ones and deploy them in multiple projects by just adding dynamic fields to them.</span></li>
                                             <li><span>Maybe you want to use one CSS file to handle multiple theme outputs and color schemes.</span></li>
                                             <li><span>This way you can keep CSS files on one place without copypasting them and make them more maintenance friendly.</span></li>
                                             <li><span>Every CSS file is cached to reduce CPU usage.</span></li>
-                                            <li><span>More info and download at: <a href="https://github.com/webdesign-benny/phpCSSparser">https://github.com/webdesign-benny/phpCSSparser</a></span></li>
+                                            <li><span>More info and download at: <a href="https://github.com/webdesign-benny/CSSparser">https://github.com/webdesign-benny/phpCSSparser</a></span></li>
                                         </ul>
                                         <br />
-                                        <h4>Next in upcomming version:</h4>
+                                        <h4>Next in upcomming versions:</h4>
                                         <ul class="featured">
                                             <li><span>Create your own dynamic type fields. At the moment keywords "$insert" and "$attribute" are standard.</span></li>
-                                            <li><span>Error and general logfile to inspect the result after parsing.</span></li>
                                             <li><span>Compress and decrompress functions.</span></li>
-                                            <li><span>Usage of this script true a REST webservice without to install anything.</span></li>
+                                            <li><span>CSS2/CSS3 Validation tool.</span></li>
+                                            <li><span>Pre-parse your css files to retrieve a php variable list or array automatically.</span></li>
+                                            <li><span>Error and general logfile to inspect the result after parsing.</span></li>
+                                            <li><span>Usage of this script over a REST webservice without to install anything.</span></li>
                                         </ul>
                                         <br />
 									</section>

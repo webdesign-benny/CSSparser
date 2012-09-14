@@ -16,7 +16,6 @@ File structure:
 index.html                             // the page that needs to be styled dynamic, see the header how to use the link tag
 cssParser.object.php                   // the file that instantiate the cssParser class and is different for every project
 classes/cssparser/cssParser.class.php  // the workhorse cssParser class, see the different config settings you can use in a config array
-css/style.css                          // a general static style sheet, no attention needed.
 css/reflection.test.css                // this is the actual css file that we are parsing and caching
 cache/css/                             // the cache folder where the output is stored. Use cmod777 on these folders.
 tests/                                 // some basic test files to use with SimpleTest.
@@ -44,11 +43,14 @@ Note:
   I personal use a "general" folder where I store all my files that I use for multiple projects.
   
 In next upcomming version:
-- Create your own dynamic key fields. At the moment keywords "$insert" and "$attribute" are standard.
+- Pre-parse your css files to get a full php array of your variables automatic.
+- Ability to auto update the cache files when something changes in your css master files.
+- Create your own dynamic key fields. At the moment only keywords "$insert" and "$attribute" are standard.
 - Error and general logfile to inspect the result in a nutshell after parsing.
+- CSS2/3 Validation tool and duplicity redudance check to optimize your css.
 - Compress and decrompress functions for increase load speed or readability.
 - Some extra design patterns, refactoring for loose coupling the cache method in an external facade class for example. 
-- Usage of this script true a REST webservice without to install anything. 
+- Usage of this script over a REST webservice without to install anything. 
   The cached css files will be stored always on your server as fallback when my server go's down for some reason.
   Provided with a security salt key in the link tags for extra defence on cross browser attacks.
 - ...
